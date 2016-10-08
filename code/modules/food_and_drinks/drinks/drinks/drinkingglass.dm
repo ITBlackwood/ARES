@@ -581,9 +581,97 @@
 		desc = "Your standard drinking glass."
 
 // for /obj/machinery/vending/sovietsoda
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/pitcher
+	name = "Pitcher"
+	desc = "A big container for holding a lot of liquid that you then serve to people."
+	icon_state = "pitcher"
+	amount_per_transfer_from_this = 15
+	volume = 120
+	materials = list(MAT_GLASS=300)
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/pitcher/on_reagent_change()
+	overlays.Cut()
+
+	if(reagents.total_volume)
+		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]1")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 25)
+				filling.icon_state = "[icon_state]1"
+			if(26 to 79)
+				filling.icon_state = "[icon_state]5"
+			if(80 to INFINITY)
+				filling.icon_state = "[icon_state]12"
+
+		filling.icon += mix_color_from_reagents(reagents.reagent_list)
+		overlays += filling
+		name = "Pitcher of " + reagents.get_master_reagent_name() //No matter what, the glass will tell you the reagent's name. Might be too abusable in the future.
+	else
+		name = "Pitcher"
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cocktail
+	name = "Cocktail glass"
+	desc = "Glass used to serve cocktails"
+	icon_state = "glass-cocktail"
+	volume = 20
+	materials = list(MAT_GLASS=100)
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cocktail/on_reagent_change()
+	overlays.Cut()
+
+	if(reagents.total_volume)
+		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]1")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 25)
+				filling.icon_state = "[icon_state]1"
+			if(26 to 50)
+				filling.icon_state = "[icon_state]3"
+			if(51 to 75)
+				filling.icon_state = "[icon_state]5"
+			if(76 to INFINITY)
+				filling.icon_state = "[icon_state]12"
+
+		filling.icon += mix_color_from_reagents(reagents.reagent_list)
+		overlays += filling
+		name = "Glass of " + reagents.get_master_reagent_name()
+	else
+		name = "Cocktail glass"
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/champagne
+	name = "Champagne flute"
+	desc = "A glass on a foot used to serve Champagne. Let's celebrate and suck some..."
+	icon_state = "glass-champagne"
+	volume = 20
+	materials = list(MAT_GLASS=100)
+
+/obj/item/weapon/reagent_containers/food/drinks/drinkingglass/champagne/on_reagent_change()
+	overlays.Cut()
+
+	if(reagents.total_volume)
+		var/image/filling = image('icons/obj/reagentfillings.dmi', src, "[icon_state]1")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 25)
+				filling.icon_state = "[icon_state]1"
+			if(26 to 75)
+				filling.icon_state = "[icon_state]5"
+			if(76 to INFINITY)
+				filling.icon_state = "[icon_state]12"
+
+		filling.icon += mix_color_from_reagents(reagents.reagent_list)
+		overlays += filling
+		name = "Flute of " + reagents.get_master_reagent_name()
+	else
+		name = "Champagne flute"
+
+
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/soda
 	list_reagents = list("sodawater" = 50)
-
 
 /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cola
 	list_reagents = list("cola" = 50)

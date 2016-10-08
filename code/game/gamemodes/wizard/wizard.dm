@@ -224,7 +224,6 @@
 			if(wizard.current && wizard.current.stat!=DEAD && wizardwin)
 				text += "<br><font color='green'><B>The wizard was successful!</B></font>"
 				feedback_add_details("wizard_success","SUCCESS")
-				sql_report_objective_karma(wizard.key, karma_reward)
 				to_chat(world, "<b>[wizard.key] got [karma_reward] karma points for completing special role!</b>")
 			else
 				text += "<br><font color='red'><B>The wizard has failed!</B></font>"
