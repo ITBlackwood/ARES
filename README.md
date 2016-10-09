@@ -1,8 +1,10 @@
-# ATMTA STATION
-Форк Paradise Station.
-[Website](http://атмта.рф/) - [Code](https://github.com/ParadiseSS13/Paradise) - [Discord](https://discord.gg/014REXI6YHvMSo7Ew)
+# ARES
+████████████████████████
+[Website]████████ - [Code](https://github.com/ParadiseSS13/Paradise) - [Discord]████████████
 
-Постоянно модифицируемый билд Paradise, набитый мемами и МЕМАСАМИ.
+Билд, основанный на ████████, набитый ████████████ и ████████.
+
+[ДАННЫЕ УДАЛЕНЫ]
 
 ### LICENSE
 
