@@ -455,9 +455,6 @@ var/global/list/special_role_times = list( //minimum age (in days) for accounts 
 			dat += "<tr><td colspan=4><hr></td></tr>"
 			for(var/gear_name in LC.gear)
 				var/datum/gear/G = LC.gear[gear_name]
-				if(G.wl_id)
-					if(!is_item_whitelisted(user.key,G.wl_id))
-						continue
 				var/ticked = (G.display_name in gear)
 				dat += "<tr style='vertical-align:top;'><td width=15%><a style='white-space:normal;' [ticked ? "class='linkOn' " : ""]href='?_src_=prefs;preference=gear;toggle_gear=[G.display_name]'>[G.display_name]</a></td>"
 				dat += "<td width = 5% style='vertical-align:top'>[G.cost]</td><td>"

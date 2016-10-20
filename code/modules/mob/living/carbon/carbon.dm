@@ -466,8 +466,6 @@ var/list/ventcrawl_machinery = list(/obj/machinery/atmospherics/unary/vent_pump,
 		client.eye = src
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
-			if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing/under/contortionist/worn))
-				equip_to_slot_or_del(new /obj/item/clothing/under/pirate_rags(src), slot_w_uniform)
 	pipes_shown.len = 0
 
 //OOP

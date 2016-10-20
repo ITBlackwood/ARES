@@ -1,7 +1,7 @@
 /obj/machinery/glass_recycler
 	name = "Kitchenware Recycler"
 	desc = "A machine that recycles glass shards into kitchenware."
-	icon = 'hyntatmta/icons/obj/machinery/kitchen.dmi'
+	icon = 'icons/obj/cooking_machines.dmi'
 	icon_state = "glass_recycler"
 	anchored = 1
 	density = 0
@@ -9,7 +9,6 @@
 
 	New()
 		..()
-		UnsubscribeProcess()
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if(istype(W, /obj/item/weapon/shard))
@@ -67,9 +66,6 @@
 				src.glass_amt -= 1
 			if("shot")
 				new /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/shotglass(get_turf(src))
-				src.glass_amt -= 1
-			if("wine")
-				new /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/wine(get_turf(src))
 				src.glass_amt -= 1
 			if("cocktail")
 				new /obj/item/weapon/reagent_containers/food/drinks/drinkingglass/cocktail(get_turf(src))

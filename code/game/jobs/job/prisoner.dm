@@ -15,5 +15,4 @@
 	if(!H)	return 0
 	H.equip_or_collect(new /obj/item/clothing/under/color/orange(H), slot_w_uniform)
 	H.equip_or_collect(new /obj/item/clothing/shoes/orange(H), slot_shoes)
-	H.equip_or_collect(new /obj/item/weapon/storage/box/survival/prisoner(H), slot_r_hand)
 	return 1

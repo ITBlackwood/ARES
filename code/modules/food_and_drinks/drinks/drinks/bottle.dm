@@ -278,6 +278,13 @@
 	isGlass = 0
 	list_reagents = list("limejuice" = 100)
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/champagne
+	name = "Champagne  Vine"
+	desc = "Fizzy vine used for celebrations from the Champagne region of France"
+	icon = 'icons/obj/drinks.dmi'
+	icon_state = "champagnebottle"
+	list_reagents = list("champagne" = 100)
+
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/weapon/reagent_containers/food/drinks/bottle/molotov
 	name = "molotov cocktail"
